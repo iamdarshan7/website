@@ -1,0 +1,163 @@
+{% extends 'base.html' %}
+{% load static %}
+<!-- {% block title %}
+paluwaa | details
+{% endblock title %} -->
+
+
+{% block "header" %}
+    {% include 'header.html' %}
+{% endblock "header" %}
+
+
+{% block content %}
+<!-- Content -->
+<!-- <div class="bnr-inr bg-pt" style="background-image:url(1.png);"> -->
+    <div class="container bkimgd" style="background-image:url({{ details.university.cover_photo.url }});">
+        <div class="row">
+            <!-- Left part start -->
+                <div class="col-lg-10 col-md-9 col-sm-12">
+                    <h2>{{ details.university.name }}</h2>
+                    <h4>{{ details.university.desc|safe}}</h4>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <br>
+                    <span class="input-group-btn">
+                        <a href=" {% url 'AppFormDetail' %}"> <button name="submit" value="Submit" type="submit" class="site-button white radius-xl">Apply Now</button></a>
+                    </span>
+                    <br>
+                    
+                </div>
+        </div>
+    </div>
+<!-- </div> -->
+<!-- inner page banner END -->
+<!-- Content start-->
+<div class="page-content bg-white">
+<!-- contact area -->
+    <div class="content-block">
+        <!-- Portfolio  -->
+        <div class="section-full content-inner-2 bg-white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="m-b10 fw7 ">Don't know</h2>
+                        <p class="m-b50">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis in atque impedit qui. Ut, fugiat.</p>
+                    
+                        <div class="row m-b30">
+                            <div class="col-md-6">
+                                <div class="p-a30 bg-gray">
+                                    <table>
+                                        <tr>
+                                            <td><img src="{% static 'images/hat.png' %}" class="iclas"></td>
+                                            <td><h6>program<br>
+                                                {{ details.program.name }}</h6>
+
+                                                </td>
+                                            <td><img src="{% static 'images/duration.png' %}" class="iclas"></td>
+                                            <td><h6>duration<br>
+                                                {{ details.program.duration }} years</h6>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="{% static 'images/fees.png' %}" class="iclas"></td>
+                                            <td><h6>tuition fee<br>
+                                                {{ details.university.fee }} GBP</h6>
+                                                </td>
+                                            <td><img src="{% static 'images/language.png' %}" class="iclas"></td>
+                                            <td><h6>language<br>
+                                                english</h6>
+                                                </td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="4"><img src="{% static 'images/text.png' %}" class="iclas"></td>
+                                            <td><h6>start<br>
+                                                14,389 GBP</h6>
+                                                </td>	
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-md-6 align-self-center">
+                                
+                                <p class="m-b0">{{ details.university.desc_1|safe }}</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- contact area END -->
+</div>
+<!-- Content END-->
+<!-- requirements -->
+<div class="content-block">
+    <!-- Career -->
+    <div class="section-full content-inner-2">
+        <div class="container">
+            <div class="row">
+                <!-- Left part start -->
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="accordion box-sort-in m-b50 space active-bg" id="accordion001">
+                        <div class="panel">
+                            <div class="acod-head">
+                                <h5 class="acod-title"> <a data-toggle="collapse" data-target="#collapseOne001" aria-expanded="true"> ENTERY REQURIEMENTS </a> </h5>
+                            </div>
+                            <div id="collapseOne001" class="acod-body collapse show" data-parent="#accordion001">
+                                <div class="acod-content">
+                                    <div class="row m-b50">
+                                        <div class="col-lg-6 col-md-6" >
+                                            <ul class="list-check primary">
+                                                <li>{{details.program.requirement_1}}</li>
+                                                <li>{{details.program.requirement_3}}</li>
+                                                <li>{{details.program.requirement_5}}</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6" >
+                                            <ul class="list-check primary">
+                                                <li>{{details.program.requirement_2}}</li>
+                                                <li>{{details.program.requirement_4}}</li>
+                                                <li>{{details.program.requirement_6}}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel">
+                            <div class="acod-head">
+                                <h5 class="acod-title"> <a data-toggle="collapse" data-target="#collapseTwo001" class="collapsed" aria-expanded="false"> INTAKE AND DEADLINE </a> </h5>
+                            </div>
+                            <div id="collapseTwo001" class="acod-body collapse" data-parent="#accordion001">
+                                <div class="acod-content">
+                                    <div class="row m-b50">
+                                        <div class="col-lg-6 col-md-6" >
+                                            <ul class="list-check primary">
+                                                <li>{{details.university.summer_intake_date|date:"F Y"}}</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6" >
+                                            <ul class="list-check primary">
+                                                <li>{{details.university.winter_intake_date|date:"F Y"}}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>	
+            </div>
+        </div>
+    </div>
+    <!-- Career END -->
+</div>
+{% endblock content %}
+
+
+<!-- Footer -->
+{% block "footer" %}
+    {% include "footer.html" %}
+{% endblock "footer" %}

@@ -1,0 +1,214 @@
+{% extends 'base.html' %} {% load static %} 
+
+<!-- {% block title %}
+paluwaa | search
+{% endblock title %} -->
+
+{% block "header" %}
+  {% include 'header.html' %}
+{% endblock "header" %}
+
+{% block content %}
+
+<div class="container">
+  <form method="GET" action="." class="form-row form-inline">
+    <div class="form-group col-lg-2 col-md-4">
+      <label for="country" class="form__item">Country</label>
+      <select id="country" class="form-control" name="country">
+        <option selected>Choose...</option>
+        {% for country in countries %}
+        <option value="{{ country }}">{{country}}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="form-group col-lg-2 col-md-4 ">
+      <label for="city">City</label>
+      <select id="city" class="form-control" name="city">
+        <option selected>Choose...</option>
+        {% for city in cities %}
+        <option value="{{ city }}">{{ city }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="form-group col-lg-2 col-md-4">
+      <label for="university">University</label>
+      <select id="university" class="form-control" name="university">
+        <option selected>Choose...</option>
+        {% for uni in university %}
+        <option value="{{ uni }}">{{ uni }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="form-group col-lg-2 col-md-4">
+      <label for="program">Programs</label>
+      <select id="program" class="form-control" name="programName">
+        <option selected>Choose...</option>
+        {% for pro in programs %}
+        <option value="{{ pro }}">{{ pro }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="form-group col-lg-2 col-md-4">
+      <label for="subject">Subjects</label>
+      <select id="subject" class="form-control" name="subject">
+        <option selected>Choose...</option>
+        {% for subject in subjects %}
+        <option value="{{ subject }}">{{ subject }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="form-group col-lg-2 col-md-4">
+      <span class="input-group-btn" style="margin: 30px auto 9px 20px">
+        <button name="submit" value="Submit" type="submit" class="site-button white radius-xl" style="border: 3px solid rgb(156, 8, 8);">SUBMIT</button>
+      </span>
+    </div>
+  </form>
+
+  <hr />
+
+  {% for qs in queryset %}
+
+  <div class="container bg-light p-2">
+    <div class="row card-body">
+        <img class="col-4 col-sm-3 col-md-3 col-lg-3" src="{{ qs.university.uni_logo.url }}" style="height: 100px;" alt="{{qs.university.name}}">
+
+        <div class="col-12 col-sm-8 col-md-5 col-lg-7">
+            <div class=""><h2>{{qs.university.name}}</h2></div>
+            <div class=""><b>{{qs.subject.name}}</b>,{{qs.country.name}}</div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-9 card-body">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-lg-3"><dl><dd>Program Type</dd><dt>{{qs.program.name}}</dt></dl></div>
+                <div class="col-12 col-sm-6 col-lg-3"><dl><dd>Duration</dd><dt>{{qs.program.duration}} year</dt></dl></div>
+                <div class="col-12 col-sm-6 col-lg-3"><dl><dd>Annual tuition fee</dd><dt>Rs. {{qs.university.fee}}</dt></dl></div>
+                <div class="col-12 col-sm-6 col-lg-3"><dl><dd>Intake</dd><dt>{{ qs.university.summer_intake_date|date:"F Y" }}</dt>
+                                                                        {{qs.university.winter_intake_date|date:"F Y"}} </dl></div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-5 col-lg-3">
+            <div class="row-cols container-fluid">
+                <div class="col"><a class="btn btn-1 btn-outline-success w-100" href=" {% url 'AppFormDetail' %}">Apply</a></div>
+                <div class="col pt-2"><a class="btn btn2 btn-outline-warning w-100" href="{{ qs.get_absolute_url }}">Program Details</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+  <!-- <div class="card-search-program">
+    <div class="card-search-program__inner">
+      <header class="card-search-program__header">
+        <img
+          alt="false"
+          src=""
+          class="card-search-program__img"
+          loading="lazy"
+        />
+        <h2 class="heading--delta card-search-program__heading">
+          <b>{{qs.subject.name}}</b>
+
+          <span class="card-search-program__sub-heading">
+            <b>{{qs.university.name}}</b>, {{qs.country.name}}
+          </span>
+        </h2>
+      </header>
+
+      <div class="card-search-program__content">
+        <dl class="card-search-program__stats card-search-program-list">
+          <div class="card-search-program__stats-item tile tile--small-text">
+            <dt class="card-search-program__stats-label tile__title">
+              Program type
+            </dt>
+
+            <dd
+              class="card-search-program__stats-content text-highlight tile__content"
+            >
+              {{qs.program.name}}
+            </dd>
+          </div>
+          <div class="card-search-program__stats-item tile tile--small-text">
+            <dt class="card-search-program__stats-label tile__title">
+              Duration
+            </dt>
+
+            <dd
+              class="card-search-program__stats-content text-highlight tile__content"
+            >
+            {{qs.program.duration}} year
+            </dd>
+          </div>
+          <div class="card-search-program__stats-item tile tile--small-text">
+            <dt class="card-search-program__stats-label tile__title">
+              Annual tuition fee
+            </dt>
+
+            <dd
+              class="card-search-program__stats-content text-highlight tile__content"
+            >
+              Rs. {{qs.university.fee}}
+            </dd>
+          </div>
+          <div class="card-search-program__stats-item tile tile--small-text">
+            <dt class="card-search-program__stats-label tile__title">
+              Start date
+            </dt>
+
+            <dd
+              class="card-search-program__stats-content text-highlight tile__content"
+            >
+              September
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    
+    <div
+    class="card-search-program__cta-container card-search-program__cta-container--column">
+     <form method="post" action="">
+        <input type="hidden" name="studeeapply-slug" value="" />
+        <input type="hidden" name="studeeapply-jumpoff" value="" /> -->
+        
+        <!-- <button class="button button--secondary">Apply</button> -->
+      <!-- </form> -->
+      <!-- <a
+      class="button button--primary button--outline button--outline-primary js-load-more-link"
+      href="{% url 'AppFormDetail' %}"
+      >
+      Apply
+    </a>
+      <a
+      class="button button--primary button--outline button--outline-primary js-load-more-link"
+      href="{{ qs.get_absolute_url }}"
+      >
+      Program details
+    </a>
+  </div>
+  </div> --> 
+  {% endfor %}
+</div>
+
+
+<div class="d-flex justify-content-center mt-4">
+	{% if page_obj.has_previous %}
+	<a class='btn btn-outline-danger mb-4' href="?page=1">First</a>
+	<a class='btn btn-outline-danger mb-4' href="?page={{ page_obj.previous_page_number }}">Previous</a>
+	{% endif %}
+
+	{% for num in page_obj.paginator.page_range %}
+	{% if page_obj.number == num %}
+	<a class='btn btn-danger mb-4' href="?page={{ num }}">{{ num }}</a>
+	{% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %} <a class='btn btn-outline-danger mb-4'
+		href="?page={{ num }}">{{ num }}</a>
+		{% endif %}
+		{% endfor %}
+
+		{% if page_obj.has_next %}
+		<a class='btn btn-outline-danger mb-4' href="?page={{ page_obj.next_page_number}}">Next</a>
+		<a class='btn btn-outline-danger mb-4' href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+    {% endif %}
+</div>    
+{% endblock content %}
+
+{% block "footer" %}
+    {% include "footer.html" %}
+{% endblock "footer" %}
+

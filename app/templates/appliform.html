@@ -1,0 +1,190 @@
+{% extends 'base.html' %}
+{% load static %}
+<!-- {% block title %}
+paluwaa | appliform
+{% endblock title %} -->
+
+
+{% block "header" %}
+    {% include 'header.html' %}
+{% endblock "header" %}
+
+{% block content %}
+
+
+<!-- Main Form -->
+<div class="container" id="avit-box">
+    <div class="row" >
+        <!-- For success Message after form submission -->
+        
+    <div class="col-lg-8 col-md-12 col-sm-12 text-center  mx-auto">
+        {% if messages %}
+    
+        {% for message in messages %}
+        {% if message.tags %}
+            <div class="alert alert-{{message.tags}}" role="alert">
+            
+                {{message}}
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+    </div>
+    </div>
+</div>   
+
+
+<div class="container"> 
+    <div class="row" >
+        <div class="col-6">
+<form action="" method="POST" class="form-group form box landmark--m body" autocomplete="off" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h2 class="heading--0 heading--delta heading--mb-xs">
+        Your details
+    </h2>
+    
+    <p class="text-small landmark--m" style="margin:20px">
+        <em>*required information</em>
+    </p>
+    
+    <div class="form__inner"style="margin:20px">
+        <div class="form__item form__item--required reset-last-p ">
+            <label class="form__label" for="first_name">
+                First name *
+            </label>
+            
+            
+            <div class="form__input-container">
+                <!-- <input class="form__input box box--xs box--no-shadow js-form-validation-input " type="text" id="" name="" value="" minlength="2" maxlength="50" required="required" pattern="^[^\s].*[\w]{1,255}$" aria-describedby="form-err-first-name" data-error-msg="Please enter your first name"> -->
+                {{ form.first_name }}
+            </div>
+            
+            <span id="form-err-first-name" class="form__error-msg"></span>
+            
+        </div>
+        <div class="form__item form__item--required reset-last-p " style="margin:20px 0px">
+            <label class="form__label" for="last_name">
+                Last name *
+            </label>
+            
+            
+            <div class="form__input-container">
+                <!-- <input class="form__input box box--xs box--no-shadow js-form-validation-input " type="text" id="" name="" value="" minlength="2" maxlength="50" required="required" pattern="^[^\s].*[\w]{1,255}$" aria-describedby="form-err-last-name" data-error-msg="Please enter your last name"> -->
+                {{ form.last_name }}
+            </div>
+            
+            <span id="form-err-last-name" class="form__error-msg"></span>
+            
+        </div>
+        <div class="form__item form__item--required reset-last-p " style="margin:20px 0px">
+            <label class="form__label" for="email">
+                Email address *
+            </label>
+            
+            
+            <div class="form__input-container">
+                <!-- <input class="form__input box box--xs box--no-shadow js-form-validation-input " type="text" id="" name="" value="" maxlength="75" required="required" pattern="[A-Za-z0-9!#$%&amp;'*+/=?^_‘{|}~-]+(?:\.[A-Za-z0-9!#$%&amp;'*+/=?^_‘{|}~-]+)*@(?:[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?\.)+[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?" aria-describedby="form-err-email" data-error-msg="Please enter a valid email address"> -->
+                {{ form.email }}
+            </div>
+            
+            <span id="form-err-email" class="form__error-msg"></span>
+            
+            <!-- <p class="form__helper-text">
+                <small>We'll only use this information to send you email updates about your application and studying abroad.</small>
+            </p> -->
+        </div>
+        <div class="form__item form__item--required reset-last-p " style="margin:20px 0px">
+            <label class="form__label" for="phone">
+                Phone number *
+            </label>
+            
+            
+            <!-- <div class="form__hint-text text-small">
+                Include your country code. Example: +977 98XXXXXXXX
+            </div> -->
+            
+            <div class="form__input-container">
+                <!-- <input class="form__input box box--xs box--no-shadow js-form-validation-input js-telephone-field " type="text" id="" value="" maxlength="25" required="required" aria-describedby="form-err-phone-number" data-error-msg="Something's not quite right with your phone number"> -->
+                {{ form.phone }}
+            </div>
+
+            <small>{{ form.phone.errors|striptags }}</small>
+            
+            <!-- <span id="form-err-phone-number" class="form__error-msg"></span> -->
+            
+            <!-- <p class="form__helper-text">
+                <small>We'll only use this information to call you about your application and studying abroad.</small>
+            </p> -->
+        </div>
+        <div class="form__item form__item--required reset-last-p " style="margin:20px 0px">
+            <label class="form__label" for="college">
+                College & University *
+            </label>
+            
+            
+            <div class="form__input-container">
+                <!-- <input class="form__input box box--xs box--no-shadow js-form-validation-input " type="text" id="" name="" value="" minlength="2" maxlength="50" required="required" pattern="^[^\s].*[\w]{1,255}$" aria-describedby="form-err-first-name" data-error-msg="Please enter your first name"> -->
+                {{ form.college }}
+            </div>
+            
+            <span id="form-err-first-name" class="form__error-msg"></span>
+                <!-- <label for="country" class="form__label">College & Unis</label>
+                <select id="country" class="form-control" name="country">
+                    <option selected>Choose...</option>
+                    {% for uni in university %}
+                    <option value="{{ uni }}">{{uni}}</option>
+                    {% endfor %}
+                </select> -->
+        </div>
+        <div class="form__item form__item--required reset-last-p " style="margin:20px 0px">
+            <label class="form__label" for="program">
+                Program *
+            </label>
+            
+            
+            <div class="form__input-container">
+                <!-- <input class="form__input box box--xs box--no-shadow js-form-validation-input " type="text" id="" name="" value="" minlength="2" maxlength="50" required="required" pattern="^[^\s].*[\w]{1,255}$" aria-describedby="form-err-first-name" data-error-msg="Please enter your first name"> -->
+                {{ form.program }}
+            </div>
+            
+            <span id="form-err-first-name" class="form__error-msg"></span>
+            
+        </div> 
+        <div class="form__item form__item--required reset-last-p" style="margin:20px 0px">
+            <label class="form__label" for="file">Documents *</label>
+            <!-- <input type="file" class="form-control-file" id=""> -->
+            <div>
+                {{ form.files }}
+            </div>
+        </div>
+        <p class="form__helper-text">
+            <small>Upload your last academic certificate</small>
+        </p>
+
+        <button type="submit" name="submit" value="Submit" class="btn btn-outline-danger mt-4">Submit</button>
+    </div >
+    
+</form>
+        </div>
+        <div class="col-6">
+            <h1>DATA TO SUBMIT</h1>
+            <p style="margin: 30px;">dsad</p>
+            <ul style="list-style-type: disk; margin: 50px; font-size: 20px">
+                <li>Coffee</li>
+                <li>Tea</li>
+                <li>Coca Cola</li>
+              </ul>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock content %}
+
+
+{% block "footer" %}
+    {% include "footer.html" %}
+{% endblock "footer" %}

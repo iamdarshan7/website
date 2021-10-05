@@ -1,0 +1,75 @@
+{% load static %}
+<header class="daz-header header mobile-nav ">
+    <div class="topbar bg-white ">
+        <div class="container">
+            <div class="row d-flex justify-content-between">
+                <div class="topbar-left">
+                    <ul class="top-author-link">
+                        <li><i class="ti-email m-r5"></i> info@example.com</li>
+                    </ul>
+                </div>
+                <div class="topbar-right topbar-social text-white">
+                    <ul>
+                        <li><a href="#" class="site-button circle-sm facebook hover"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#" class="site-button circle-sm twitter hover"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#" class="site-button circle-sm instagram hover"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#" class="site-button circle-sm linkedin hover"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- main header -->
+<div class="header-sticky menu-bar-content navbar-expand-lg">
+    <div class="main-bar clearfix">
+        <div class="container clearfix">
+            <!-- website logo -->
+            <div class="daz-logo">
+                
+                    <a href="{% url 'add' %}"><img src="{% static 'images/background/paluwa.png' %}" alt="Paluwa"></a>
+    
+            </div>
+            <!-- nav toggle button -->
+            <button class="navbar-toggler collapsed menuicon justify-content-end" type="button"
+                data-toggle="collapse" data-target="#navbarLeft" aria-controls="navbarLeft"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <!-- extra nav -->
+            <!-- <div class="secondary-nav">
+                <div class="secondary-cell">
+                    <button id="daz-search-btn" type="button" class="site-button-link"><i
+                            class="fa fa-search"></i></button>
+
+                </div>
+            </div> -->
+            <!-- Quik search
+            <div class="daz-search search-style-2">
+                <form action="#">
+                    <input name="search" value="" type="text" class="form-control" placeholder="Universities" style="color: black;" >
+                    <span id="daz-search-remove"><i class="flaticon-cancel"></i></span>
+                </form>
+            </div> -->
+            <!-- main nav -->
+            <div class="header-nav navbar-collapse collapse justify-content-end" id="navbarLeft">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="{% url 'add' %}">Home </a>
+                    </li>
+                    <li><a href="{% url 'search' %}">Study Program</a>
+                    </li>
+
+                    <li><a href="#">About <i class="fa fa-chevron-down"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="{% url 'about_us' %}">About Us </a></li>
+                            <li><a href="#" class="dez-page">Announcements </a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{% url 'contact_page' %}" class="dez-page">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</header>
