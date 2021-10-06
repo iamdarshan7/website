@@ -92,7 +92,7 @@ paluwaa | search
             </div>
         </div>
     </div>
-</div>
+  </div>
   <!-- <div class="card-search-program">
     <div class="card-search-program__inner">
       <header class="card-search-program__header">
@@ -183,10 +183,13 @@ paluwaa | search
     </a>
   </div>
   </div> --> 
+  {% empty %}
+    <h2>Sorry, your selected query doesn't match with the data in database.</h2>
   {% endfor %}
 </div>
 
 
+{% if page_obj.number > 1 %}
 <div class="d-flex justify-content-center mt-4">
 	{% if page_obj.has_previous %}
 	<a class='btn btn-outline-danger mb-4' href="?page=1">First</a>
@@ -206,6 +209,7 @@ paluwaa | search
 		<a class='btn btn-outline-danger mb-4' href="?page={{ page_obj.paginator.num_pages }}">Last</a>
     {% endif %}
 </div>    
+{% endif %}
 {% endblock content %}
 
 {% block "footer" %}
