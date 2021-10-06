@@ -139,4 +139,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') # new
 
 # for file upload by the user
 MEDIA_URL = '/media/'
-MEDIA_ROOT = '/root/media'
+# MEDIA_ROOT = '/root/media'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
