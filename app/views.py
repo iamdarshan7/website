@@ -181,3 +181,13 @@ def contactFormView(request):
     else:
         form = ContactFormData()
     return render(request, 'contact.html', {"form": form})            
+
+# for handling 400 and 500 error
+
+
+def handler404(request, exception):
+    return render(request, '404-not-found.html')
+
+
+def handler500(request):
+    return render(request, '500-not-found.html')
