@@ -113,13 +113,8 @@ paluwaa | details
                                                 <li>{{details.program.requirement_1}}</li>
                                                 <li>{{details.program.requirement_3}}</li>
                                                 <li>{{details.program.requirement_5}}</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6" >
-                                            <ul class="list-check primary">
                                                 <li>{{details.program.requirement_2}}</li>
                                                 <li>{{details.program.requirement_4}}</li>
-                                                <li>{{details.program.requirement_6}}</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -161,3 +156,10 @@ paluwaa | details
 {% block "footer" %}
     {% include "footer.html" %}
 {% endblock "footer" %}
+
+<script type="text/javascript">
+    const hideNoneEl = document.getElementsByClassName('hideNone');
+    if (hideNoneEl.innerHTML === '') {
+        hideNoneEL.style.display = 'none';
+    }
+</script> 

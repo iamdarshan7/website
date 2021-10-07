@@ -91,7 +91,6 @@ class FilterDetailView(DetailView):
     template_name = "search_details.html"
 
 
-    
 
 # def get_program_data(request):        
 #     qs_val = list(FacultyData.objects.values())

@@ -7,6 +7,7 @@ urlpatterns = [
     path('appform_detail/', views.applicationFormView, name="AppFormDetail"),
     path("search/", views.filterView, name="search"),
     path("search/<uuid:pk>/", views.FilterDetailView.as_view(), name="search_detail"),
+    # path("search/<uuid:pk>/", views.filterDetailView, name="search_detail"),
     path('contact/', views.contactFormView, name="contact_page"),
     # path('', views.hello, name='hello'),
     # path('another/', views.add_another_data, name="add_another"),
