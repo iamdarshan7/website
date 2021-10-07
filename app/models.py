@@ -64,8 +64,7 @@ class ProgramsType(models.Model):
     requirement_3 = models.CharField(max_length=200)
     requirement_4 = models.CharField(max_length=200)
     requirement_5 = models.CharField(max_length=200)
-    requirement_6 = models.CharField(max_length=200)
-    
+
     def __str__(self):
         return self.name
 
