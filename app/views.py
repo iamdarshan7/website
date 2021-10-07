@@ -72,6 +72,10 @@ def filterView(request):
 
     if is_valid_queryparam(university) and university != 'Choose...':
         qs = qs.filter(university__name=university)
+    
+    qs_count = qs.count()
+    if qs_count == 0 or qs_count == 1:
+        page_obj = ''
 
     context = {
         'queryset': qs,
