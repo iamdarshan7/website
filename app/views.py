@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from .forms import ApplicationFormData, ContactFormData
-from .models import Countries, Cities, ProgramsType, University, FilterForm, Subject, FeedBackByStudent
+from .models import Countries, Cities, ProgramsType, University, FilterForm, Subject, FeedBackByStudent, ApplicationForm
 from django.views.generic import TemplateView, DetailView
 from django.core.paginator import Paginator
 from django.contrib import messages
@@ -15,8 +15,16 @@ from django.contrib import messages
 
 def add_data(request):
     feedbacks = FeedBackByStudent.objects.all()
+    actual_uni_count = University.objects.count()
+    actual_program_count = ProgramsType.objects.count()
+    actual_subject_count = Subject.objects.count()
+    actual_happy_student = ApplicationForm.objects.count()
     context = {
         "feedbacks": feedbacks,
+        "actual_uni_count": actual_uni_count,
+        "actual_program_count": actual_program_count,
+        "actual_subject_count": actual_subject_count,
+        "actual_happy_student": actual_happy_student,
     }
     return render(request, 'index.html', context)
     
