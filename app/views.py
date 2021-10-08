@@ -1,15 +1,24 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from .forms import ApplicationFormData, ContactFormData
-from .models import Countries, Cities, ProgramsType, University, FilterForm, Subject
+from .models import Countries, Cities, ProgramsType, University, FilterForm, Subject, FeedBackByStudent
 from django.views.generic import TemplateView, DetailView
 from django.core.paginator import Paginator
 from django.contrib import messages
 # Create your views here.
 
 
-class add_data(TemplateView):
-    template_name = "index.html"
+# class add_data(TemplateView):
+#     template_name = "index.html"
+#     object_name = "feedbacks"
+#     model = FeedBackByStudent
+
+def add_data(request):
+    feedbacks = FeedBackByStudent.objects.all()
+    context = {
+        "feedbacks": feedbacks,
+    }
+    return render(request, 'index.html', context)
     
 # def add_data(request):
 #     if request.method == "POST":

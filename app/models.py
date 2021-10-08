@@ -72,8 +72,8 @@ class ProgramsType(models.Model):
 
 class University(models.Model):
     name = models.CharField("university_name", max_length=100)
-    cover_photo = models.ImageField(upload_to="covers/")
-    uni_logo =  models.ImageField(upload_to="covers/")
+    cover_photo = models.ImageField(upload_to="covers/uni_cover_photo/")
+    uni_logo =  models.ImageField(upload_to="covers/uni_logo/")
     desc = RichTextField("uni_short_description")
     fee = models.IntegerField()
     desc_1 = RichTextField("uni_long_paragraph_description")
@@ -125,6 +125,18 @@ class ContactForm(models.Model):
     phone= models.CharField(max_length=10,null=True, validators=[validate_number])  
     subject = models.CharField(max_length=200)
     message = models.TextField()
+
+    def __str__(self):
+        return self.name
+
+
+
+# feedback model by students
+class FeedBackByStudent(models.Model):
+    title = models.CharField(max_length=20)
+    name = models.CharField(max_length=20)
+    feedback = models.TextField(max_length=100)
+    image = models.ImageField(upload_to="covers/feedback/")
 
     def __str__(self):
         return self.name
