@@ -113,7 +113,7 @@ class ApplicationForm(models.Model):
     phone=models.CharField(max_length=10,null=True, validators=[validate_number])  
     college = models.ForeignKey(University, on_delete=models.CASCADE)
     program = models.ForeignKey(ProgramsType, on_delete=models.CASCADE)
-    files = models.FileField(upload_to="covers/")
+    files = models.FileField(upload_to="covers/application_file/")
 
     def __str__(self):
         return self.first_name
