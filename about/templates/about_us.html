@@ -78,23 +78,25 @@ paluwaa | about-us
                     </div>
                 </div>
                 <div class="row">
+                    {% for data in aboutDatas %}
                     <div class="col-lg-3 col-md-6 col-sm-6 m-b30">
                         <div class="team-section">
-                            <img src="{% static 'images/our-team/pic1.jpg' %}"  alt="">
+                            <img src="{{ data.image.url }}"  alt="{{data.name}} width="500px" height="600px">
                             <div class="team-content text-white">
-                                <p class="m-a0">Developer</p>
-                                <h6 class="text-uppercase text-black m-b0">Avit Rai Hodibu</h6>
+                                <p class="m-a0">{{data.title}}</p>
+                                <h6 class="text-uppercase text-black m-b0">{{data.name}}</h6>
                                 <div class="divider bg-white mt-2 mb-2"></div>
-                                <ul class="list-inline m-a0">
+                                <!-- <ul class="list-inline m-a0">
                                     <li><a href="#" class="text-white"><i class="fa fa-facebook"></i></a></li>
                                     <li><a href="#" class="text-white"><i class="fa fa-linkedin"></i></a></li>
                                     <li><a href="#" class="text-white"><i class="fa fa-instagram"></i></a></li>
                                     <li><a href="#" class="text-white"><i class="fa fa-twitter"></i></a></li>
-                                </ul>
+                                </ul> -->
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 m-b30">
+                    {% endfor %}
+                    <!-- <div class="col-lg-3 col-md-6 col-sm-6 m-b30">
                         <div class="team-section">
                             <img src="{% static 'images/our-team/pic1.jpg' %}"  alt="">
                             <div class="team-content text-white">
@@ -141,7 +143,7 @@ paluwaa | about-us
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
