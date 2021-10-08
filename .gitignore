@@ -105,7 +105,6 @@ myenv/
 *.sqlite3
 *.pyc
 solti/
-media/
 *.db
 *.pid
 config/settings/*env.py
