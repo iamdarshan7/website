@@ -1,47 +1,100 @@
-<!doctype html>
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>
-			announcements
-		</title>
-		<link rel="stylesheet" type="text/css" href="announcement-style.css">
-	</head>
-	<body>
-		<section>
-			<div class="leftBox">
-				<div class="content">
-					<h1> Announcement </h1>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					</p>
-				</div>
-			</div>
-			<div class="events">
-				<ul>
-					<li>
-						<div class="time">
-							<h2>24<br><span>June</span></h2>
-						</div>
-						<div class="details">
-							<h3>where does it come</h3>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-								proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-							</p>
-						</div>
-					</li>
-				</ul>
-			</div>
-		</section>
-	</body>
-</html>
+
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+paluwaa | announcement
+{% endblock title %}
+
+
+{% block "header" %}
+    {% include 'header.html' %}
+{% endblock "header" %}
+
+{% block content %}
+
+<!-- Content -->
+<div class="page-content bg-white">
+    <!-- inner page banner -->
+    <div class="bnr-inr bg-pt" style="background-image:url({% static 'images/banner/announcement.jpg' %});">
+        <div class="container">
+            <div class="bnr-inr-entry">
+                <h1>Announcements</h1>
+                <!-- Breadcrumb row -->
+                <div class="breadcrumb-row">
+                    <ul class="list-inline">
+                        <li><a href="{% url 'add' %}">Home</a></li>
+                        <li>Announcements</li>
+                    </ul>
+                </div>
+                <!-- Breadcrumb row END -->
+            </div>
+        </div>
+    </div>
+    <!-- inner page banner END -->
+	<div class="tannouncement">
+        <strong>check all the new announcement of any events</strong>
+    </div>
+
+    <div class="container bg-light p-2">
+    <div class="row card-body product-box rounded">
+        <img id="myImg" class="col-sm-3 col-md-3 col-lg-2" src="{% static 'images/banner/promote.png' %}" style="height: 150px;">
+        <div class="col-sm-8 col-md-8 col-lg-9">
+            <div class=""><h2>JOJSOFJSAODJFODFJ</h2></div>
+            <b>SSSSSSSSSSSSSSSSSSSSS SSSS SSS  SS S S SS  S SSSSSSSSSSSSSSSSSSSSSSSSSlmldfSSSSSSSSSSSSSSSSSSSSSn nbnbnbbjbjkbjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
+        </div>
+        
+        
+    </div>
+  </div>
+
+
+
+    {% comment %} <div class=" col-lg-6 col-md-6 col-sm-12">
+        <div class="imaa col-4">
+        </div>
+        <div class="col-8">
+        </div>
+    </div> {% endcomment %}
+
+
+              {% comment %} <div class="product-container">
+                  
+                <!--product-box-1---------->
+                  <div class="product-box col-lg-6 col-md-6 col-sm-12">
+                      <!--product-img------------>
+                      <div class="product-img">
+        
+                          <!--img------>
+                        <img src="1.jpg">
+                      </div>
+                      <!--product-details-------->
+                      <div class="product-details">
+                          <a href="#" class="p-name">A-Lone</a>
+                          <span class="p-price">$100000</span>
+                      </div>
+                  </div>
+                  <!--product-box-1---------->
+                  <div class="product-box col-lg-6 col-md-6 col-sm-12">
+                      <!--product-img------------>
+                      <div class="product-img col-lg-3 col-md-3 col-sm-4">
+        
+                          <!--img------>
+                        <img src="1.jpg">
+                      </div>
+                      <!--product-details-------->
+                      <div class="product-details col-lg-9 col-md-9 col-sm-8">
+                          <a href="#" class="p-name">A-Lone</a>
+                          <span class="p-price">$100000</span>
+                      </div>
+                  </div>
+	<!--content area-->
+</div> {% endcomment %}
+</div>
+
+
+{% endblock content %}
+<!-- Footer -->
+{% block "footer" %}
+    {% include "footer.html" %}
+{% endblock "footer" %}

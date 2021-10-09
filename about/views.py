@@ -20,4 +20,4 @@ class EventTemplateView(TemplateView):
     template_name = 'event.html'
 
 class AnnouncementTemplateView(TemplateView):
-    template_engine = 'announcement.html'    
+    template_name = 'announcement.html'    

@@ -36,7 +36,7 @@ paluwaa | appliform
 
 <div class="container"> 
     <div class="row" >
-        <div class="col-6">
+        <div class="col-12">
 <form action="" method="POST" class="form-group form box landmark--m body" autocomplete="off" enctype="multipart/form-data">
     {% csrf_token %}
     <h2 class="heading--0 heading--delta heading--mb-xs">
@@ -99,9 +99,7 @@ paluwaa | appliform
             </label>
             
             
-            <!-- <div class="form__hint-text text-small">
-                Include your country code. Example: +977 98XXXXXXXX
-            </div> -->
+
             
             <div class="form__input-container">
                 <!-- <input class="form__input box box--xs box--no-shadow js-form-validation-input js-telephone-field " type="text" id="" value="" maxlength="25" required="required" aria-describedby="form-err-phone-number" data-error-msg="Something's not quite right with your phone number"> -->
@@ -110,11 +108,9 @@ paluwaa | appliform
 
             <small>{{ form.phone.errors|striptags }}</small>
             
-            <!-- <span id="form-err-phone-number" class="form__error-msg"></span> -->
+    
             
-            <!-- <p class="form__helper-text">
-                <small>We'll only use this information to call you about your application and studying abroad.</small>
-            </p> -->
+            
         </div>
         <div class="form__item form__item--required reset-last-p " style="margin:20px 0px">
             <label class="form__label" for="college">
@@ -159,22 +155,19 @@ paluwaa | appliform
         </div>
         <p class="form__helper-text">
             <small>Upload your last academic certificate</small>
+            <br>
+            <small>citizenship and passport(passport optional)</small>
+            <br>
+            <small>passport size photo</small>
+            <br>
+            <small>Note:upload pdf file attaching all Documents</small>
+
         </p>
 
         <button type="submit" name="submit" value="Submit" class="btn rounded btn-outline-danger mt-4 font-baloo">Submit</button>
     </div >
     
 </form>
-        </div>
-        <div class="col-6">
-            <h1>DATA TO SUBMIT</h1>
-            <p style="margin: 30px;" class="font-prompt">This is for development purposes only. Actual requirements may change later.</p>
-            <ul class="font-baloo" style="list-style-type: disk; margin: 50px; font-size: 20px">
-                <li>Coffee</li>
-                <li>Tea</li>
-                <li>Coca Cola</li>
-            </ul>
-
         </div>
     </div>
 </div>

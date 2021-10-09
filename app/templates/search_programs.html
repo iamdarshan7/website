@@ -73,7 +73,7 @@ paluwaa | search
   {% for qs in queryset %}
 
   <div class="container bg-light p-2">
-    <div class="row card-body">
+    <div class="row card-body product-box">
         <img class="col-4 col-sm-3 col-md-3 col-lg-2" src="{{ qs.university.uni_logo.url }}" style="height: 100px;" alt="{{qs.university.name}}">
 
         <div class="col-12 col-sm-8 col-md-5 col-lg-7">
@@ -97,96 +97,7 @@ paluwaa | search
         </div>
     </div>
   </div>
-  <!-- <div class="card-search-program">
-    <div class="card-search-program__inner">
-      <header class="card-search-program__header">
-        <img
-          alt="false"
-          src=""
-          class="card-search-program__img"
-          loading="lazy"
-        />
-        <h2 class="heading--delta card-search-program__heading">
-          <b>{{qs.subject.name}}</b>
-
-          <span class="card-search-program__sub-heading">
-            <b>{{qs.university.name}}</b>, {{qs.country.name}}
-          </span>
-        </h2>
-      </header>
-
-      <div class="card-search-program__content">
-        <dl class="card-search-program__stats card-search-program-list">
-          <div class="card-search-program__stats-item tile tile--small-text">
-            <dt class="card-search-program__stats-label tile__title">
-              Program type
-            </dt>
-
-            <dd
-              class="card-search-program__stats-content text-highlight tile__content"
-            >
-              {{qs.program.name}}
-            </dd>
-          </div>
-          <div class="card-search-program__stats-item tile tile--small-text">
-            <dt class="card-search-program__stats-label tile__title">
-              Duration
-            </dt>
-
-            <dd
-              class="card-search-program__stats-content text-highlight tile__content"
-            >
-            {{qs.program.duration}} year
-            </dd>
-          </div>
-          <div class="card-search-program__stats-item tile tile--small-text">
-            <dt class="card-search-program__stats-label tile__title">
-              Annual tuition fee
-            </dt>
-
-            <dd
-              class="card-search-program__stats-content text-highlight tile__content"
-            >
-              Rs. {{qs.university.fee}}
-            </dd>
-          </div>
-          <div class="card-search-program__stats-item tile tile--small-text">
-            <dt class="card-search-program__stats-label tile__title">
-              Start date
-            </dt>
-
-            <dd
-              class="card-search-program__stats-content text-highlight tile__content"
-            >
-              September
-            </dd>
-          </div>
-        </dl>
-      </div>
-    </div>
-    
-    <div
-    class="card-search-program__cta-container card-search-program__cta-container--column">
-     <form method="post" action="">
-        <input type="hidden" name="studeeapply-slug" value="" />
-        <input type="hidden" name="studeeapply-jumpoff" value="" /> -->
-        
-        <!-- <button class="button button--secondary">Apply</button> -->
-      <!-- </form> -->
-      <!-- <a
-      class="button button--primary button--outline button--outline-primary js-load-more-link"
-      href="{% url 'AppFormDetail' %}"
-      >
-      Apply
-    </a>
-      <a
-      class="button button--primary button--outline button--outline-primary js-load-more-link"
-      href="{{ qs.get_absolute_url }}"
-      >
-      Program details
-    </a>
-  </div>
-  </div> --> 
+  
   {% empty %}
     <h2>Sorry, your selected query doesn't match with the data in database.</h2>
     <script type="text/javascript">
