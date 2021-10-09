@@ -12,7 +12,7 @@ paluwaa | about-us
 <!-- Content -->
 <div class="page-content bg-white">
     <!-- inner page banner -->
-    <div class="bnr-inr bg-pt" style="background-image:url({% static 'images/banner/about.jpg' %});">
+    <div class="bnr-inr bg-pt" style="background-image:url('/static/images/banner/about.jpg');">
         <div class="container">
             <div class="bnr-inr-entry">
                 <h1>About Us</h1>
@@ -58,7 +58,7 @@ paluwaa | about-us
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-12">
                                 <div class="icon-bx-wraper bx-style-1 p-tb30 p-lr20 m-b30 center br-col-b1">
-                                    <h2 class="counter font-45">654</h2>
+                                    <h2 class="counter font-45">{{ actual_happy_student }}</h2>
                                     <div class="icon-content">
                                         <h5 class="tilte fw5">Happy Clients</h5>
                                         <p class="m-b0 font-14 font-baloo">Take a trivial example, which seds ever undertakes laborious.</p>

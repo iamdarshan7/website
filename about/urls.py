@@ -7,5 +7,7 @@ urlpatterns = [
     path('about/', views.aboutUsTemplateView, name='about_us'),
     path('promise/', views.PromiseTemplateView.as_view(), name='promise'),
     path('event/', views.EventTemplateView.as_view(), name='event'),
-    path('announcement/', views.AnnouncementTemplateView.as_view(), name='announcement'),
+    # path('announcement/', views.AnnouncementTemplateView.as_view(), name='announcement'),
+    path('announcement/', views.announcementTemplateView, name='announcement'),
+
 ]
