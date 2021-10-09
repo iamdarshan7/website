@@ -1,0 +1,25 @@
+.tannouncement strong{
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    color: #1b1919;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 40px;
+    padding: 5px 30px;
+    border: 1px solid #e0e0e0;
+}
+.tannouncement{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.tannouncement strong{
+    color: #ffffff;
+    background-color: #202020;
+    font-weight: 500;
+}
+.product-box:hover{
+    display: flex;
+    box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
+}
