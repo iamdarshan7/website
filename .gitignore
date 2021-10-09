@@ -103,10 +103,8 @@ myenv/
 
 .DS_Store
 *.sqlite3
-media/
 *.pyc
 solti/
-media/
 *.db
 *.pid
 config/settings/*env.py
