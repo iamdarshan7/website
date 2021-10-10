@@ -18,6 +18,7 @@ class Announcement(models.Model):
     heading = models.CharField(max_length=50)
     description = models.TextField(max_length=150)
     pub_date = models.DateTimeField(default=date.today)
+    show_this = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True, db_index=True)
 
     def __str__(self):
