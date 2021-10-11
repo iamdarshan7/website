@@ -193,7 +193,7 @@ paluwaa | home
 <!-- new -->
 
 
-  <div class="section-full content-inner-2 bg-gray"
+<div class="section-full content-inner-2 bg-gray"
 				style="background-image:url(static/images/banner/fetures.jpg); background-size:cover">
 				<div class="container-fluid>
 					<div class="row">
@@ -205,17 +205,17 @@ paluwaa | home
 						<div class="col-lg-6 col-md-12  col-sm-12" style="border: 4px solid white;border-radius: 10px; padding: 20px;">
 							<div
 							class="testimonial-one owl-dots-black-full owl-loaded owl-theme owl-carousel owl-btn-center-lr owl-btn-3">
-							{% for fd in feedbacks %}
-							{% if fd.show_this %}
+							{% for con in special_consultancy %}
 								<div class="item">
 									<div class="testimonial-3">
-										<div class="features-pi radius"><img src="{{ fd.image.url }}"
-												width="100" height="100" alt="{{fd.name}}"></div>
-										<div class="testimonial-detail"> <strong class="testimonial-name" style="font-size:20px;"">{{fd.name}}</strong> <span class="testimonial-position">{{fd.title}}</span> </div>
+										<div class="features-pi radius"><img src="{{ con.logo_photo.url }}"
+												width="100" height="100" alt="{{con.name}}"></div>
+										<div class="testimonial-detail"> <strong class="testimonial-name" style="font-size:20px;"">{{con.name}}</strong> <span class="testimonial-position">{{con.desc|truncatechars:100}}</span> </div>
 									</div>
 									
 								</div>
-							{% endif %}
+							{% empty %}
+							    <h2>Sorry</h2>
 							{% endfor %}
 							</div>
 						</div>
@@ -223,18 +223,18 @@ paluwaa | home
 						<div class="col-lg-6 col-md-12  col-sm-12" style="border: 4px solid white;border-radius: 10px; padding: 20px;">
 							<div
 							class="testimonial-one owl-dots-black-full owl-loaded owl-theme owl-carousel owl-btn-center-lr owl-btn-3">
-							{% for fd in feedbacks %}
-							{% if fd.show_this %}
+							{% for uni in special_uni %}
 								<div class="item">
 									<div class="testimonial-3">
-										<div class="features-pi radius"><img src="{{ fd.image.url }}"
-												width="100" height="100" alt="{{fd.name}}"></div>
+										<div class="features-pi radius"><img src="{{ uni.uni_logo.url }}"
+												width="100" height="100" alt="{{uni.name}}"></div>
 									
-										<div class="testimonial-detail" > <strong class="testimonial-name" style="font-size:20px;">{{fd.name}}</strong> <span class="testimonial-position">{{fd.title}}</span> </div>
+										<div class="testimonial-detail" > <strong class="testimonial-name" style="font-size:20px;">{{uni.name}}</strong> <span class="testimonial-position">{{uni.desc|truncatechars:100}}</span> </div>
 									</div>
 									
 								</div>
-							{% endif %}
+							{% empty %}
+							<h2>Sorry</h2>
 							{% endfor %}
 							</div>
 						</div>

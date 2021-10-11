@@ -74,8 +74,9 @@ class University(models.Model):
     name = models.CharField("university_name", max_length=100)
     cover_photo = models.ImageField(upload_to="covers/uni_cover_photo/")
     uni_logo =  models.ImageField(upload_to="covers/uni_logo/")
-    desc = RichTextField("uni_short_description")
+    desc = models.TextField("uni_short_description", max_length=100)
     fee = models.IntegerField()
+    special = models.BooleanField(default=False)
     desc_1 = RichTextField("uni_long_paragraph_description")
     summer_intake_date = models.DateField(blank=True, null=True)
     winter_intake_date = models.DateField(blank=True, null=True)
@@ -141,3 +142,16 @@ class FeedBackByStudent(models.Model):
 
     def __str__(self):
         return self.name
+
+class Consultancy(models.Model):
+    name = models.CharField("consultancy_name", max_length=100)
+    logo_photo = models.ImageField(upload_to='covers/consultancy/')
+    desc = models.TextField(max_length=200)
+    special = models.BooleanField(default=False)
+
+    def __str__(self):
+        return  self.name
+
+    class Meta: 
+        verbose_name_plural = "consultancies"
+    
