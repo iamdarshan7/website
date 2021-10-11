@@ -136,6 +136,7 @@ class FeedBackByStudent(models.Model):
     title = models.CharField(max_length=20)
     name = models.CharField(max_length=20)
     feedback = models.TextField(max_length=100)
+    show_this = models.BooleanField(default=True)
     image = models.ImageField(upload_to="covers/feedback/")
 
     def __str__(self):

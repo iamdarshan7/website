@@ -275,6 +275,7 @@ paluwaa | home
 							<div
 							class="testimonial-one owl-dots-black-full owl-loaded owl-theme owl-carousel owl-btn-center-lr owl-btn-3">
 							{% for fd in feedbacks %}
+							{% if fd.show_this %}
 								<div class="item">
 									<div class="testimonial-3">
 										<div class="testimonial-pic radius"><img src="{{ fd.image.url }}"
@@ -288,8 +289,8 @@ paluwaa | home
 									</div>
 									
 								</div>
-								{% endfor %}
-								
+							{% endif %}
+							{% endfor %}
 							</div>
 						</div>
 					</div>
