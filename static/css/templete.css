@@ -85,6 +85,11 @@
 	position:relative;
 	overflow:hidden;
 }
+.boxes-features{
+	border: 3px solid #ffffff;
+	border-radius:4px;
+}
+
 .box-services > i {
 	font-size:0;
 	position:absolute;

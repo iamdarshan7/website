@@ -4964,9 +4964,16 @@ ol.comment-list li.comment .comment-respond .comment-form p {
 	border: 3px solid #ffffff;
 	margin-bottom:10px;
 }
+.features-pi{
+	height:100%;
+	width:100%;
+	border: 3px solid #ffffff;
+	margin-bottom:10px;
+}
+
 .widget-testimonial .testimonial-name{
 	font-weight:600;
-	font-size:13px;
+	font-size:20px;
 	text-transform:uppercase;
 	font-family: "Montserrat",sans-serif;
 	color:#000;
@@ -6466,7 +6473,7 @@ a,
 }
 .testimonial-name{
     font-family: montserrat;
-    font-size: 13px;
+    font-size: 20px;
     font-weight: 600;
     text-transform: uppercase;
 }
@@ -6559,7 +6566,7 @@ a,
 .testimonial-2 .testimonial-name,
 .testimonial-3 .testimonial-name{
 	font-weight:600;
-	font-size:13px;
+	font-size:20px;
 	text-transform:uppercase;
 	font-family: "Montserrat",sans-serif;
 	color:#000;
@@ -6569,7 +6576,7 @@ a,
 	text-transform:uppercase;
 	font-family: "Montserrat",sans-serif;
 	color:#888q;
-	font-size:12px;
+	font-size:20px;
 	font-style: inherit;
 }
 .testimonial-2 .testimonial-position p,
@@ -6580,7 +6587,7 @@ a,
 .testimonial-3 .testimonial-text{
 	color: #505050;
     font-family: montserrat;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 500;
     margin-bottom: 10px;
 }
