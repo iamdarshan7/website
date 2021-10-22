@@ -215,7 +215,10 @@ paluwaa | home
 									
 								</div>
 							{% empty %}
-							    <h2>Sorry</h2>
+							    <div>
+							<h2>Contact us if you want your institute to be features</h2>
+							<span style="padding: 5px;"><a href="{% url 'contact_page' %}" class="site-button button-md outline outline-2 red font-patrick">contact</a></span>
+							</div>
 							{% endfor %}
 							</div>
 						</div>
@@ -234,7 +237,10 @@ paluwaa | home
 									
 								</div>
 							{% empty %}
-							<h2>Sorry</h2>
+							<div>
+							<h2>Contact us if you want your university to be features</h2>
+							<span style="padding: 5px;"><a href="{% url 'contact_page' %}" class="site-button button-md outline outline-2 red font-patrick">contact</a></span>
+							</div>	
 							{% endfor %}
 							</div>
 						</div>
