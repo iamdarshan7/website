@@ -21,6 +21,11 @@ def add_data(request):
     actual_program_count = ProgramsType.objects.count()
     actual_subject_count = Subject.objects.count()
     actual_happy_student = ApplicationForm.objects.count()
+
+    total_special_uni = special_uni.count()
+    print("total", total_special_uni)
+    for i in special_uni:
+        print(i.name)
     context = {
         "feedbacks": feedbacks,
         "actual_uni_count": actual_uni_count,
@@ -29,6 +34,7 @@ def add_data(request):
         "actual_happy_student": actual_happy_student,
         "special_uni": special_uni,
         "special_consultancy": special_consultancy,
+        "total_special_uni": total_special_uni,
     }
     return render(request, 'index.html', context)
     
@@ -69,15 +75,13 @@ def is_valid_queryparam(param):
     return param != '' and param is not None
 
 def filterView(request):
-    qs = FilterForm.objects.all()
+    qs = FilterForm.objects.all().order_by('-id')
     country = request.GET.get('country')
     city = request.GET.get('city')
     university = request.GET.get('university')
     program = request.GET.get('programName')
     subject = request.GET.get('subject')
-    paginator = Paginator(qs, 2)
-    page_number = request.GET.get('page')
-    page_obj = paginator.get_page(page_number)
+    
 
     if is_valid_queryparam(country) and country != "Choose...":
         qs = qs.filter(country__name=country)
@@ -94,8 +98,13 @@ def filterView(request):
     if is_valid_queryparam(university) and university != 'Choose...':
         qs = qs.filter(university__name=university)
     
+    paginator = Paginator(qs, 4)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+
     qs_count = qs.count()
-    if qs_count == 0 or qs_count == 1:
+    if qs_count == 0:
         page_obj = ''
 
     context = {
@@ -105,7 +114,7 @@ def filterView(request):
         "subjects": Subject.objects.all(),
         "programs": ProgramsType.objects.all(),
         "university": University.objects.all(),
-        "page_obj": page_obj
+        "page_obj": page_obj,
     }
     return render(request, 'search_programs.html', context)    
 

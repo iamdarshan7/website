@@ -1,6 +1,6 @@
 from django.db.models.signals import pre_save
 from django.dispatch import receiver
-from .models import University, FeedBackByStudent, Consultancy
+from .models import University, FeedBackByStudent
 
 
 @receiver(pre_save, sender=University)
@@ -20,9 +20,9 @@ def delete_old_image(sender, instance, *args, **kwargs):
             existing_image.image.delete(False)
 
 
-@receiver(pre_save, sender=Consultancy)
-def delete_old_image(sender, instance, *args, **kwargs):
-    if instance.pk:
-        existing_image = Consultancy.objects.get(pk=instance.pk)
-        if instance.logo_photo and existing_image.logo_photo != instance.logo_photo:
-            existing_image.logo_photo.delete(False)
+# @receiver(pre_save, sender=Consultancy)
+# def delete_old_image(sender, instance, *args, **kwargs):
+#     if instance.pk:
+#         existing_image = Consultancy.objects.get(pk=instance.pk)
+#         if instance.logo_photo and existing_image.logo_photo != instance.logo_photo:
+#             existing_image.logo_photo.delete(False)

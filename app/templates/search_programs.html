@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% load static %} 
 
 {% block title %}
-paluwaa | search
+estudygarage | search
 {% endblock title %}
 
 {% block "header" %}
@@ -70,7 +70,7 @@ paluwaa | search
 
   <hr />
 
-  {% for qs in queryset %}
+  {% for qs in page_obj.object_list %}
 
   <div class="container bg-light p-2">
     <div class="row card-body product-box">
@@ -78,13 +78,13 @@ paluwaa | search
 
         <div class="col-12 col-sm-8 col-md-5 col-lg-7">
             <div class=""><h2>{{qs.university.name}}</h2></div>
-            <div class=""><b>{{qs.subject.name}}</b>,{{qs.country.name}}</div>
+            <div class=""><b>{{qs.subject.name}}</b>, {{qs.country.name}}</div>
         </div>
         <div class="col-12 col-sm-6 col-lg-9 card-body">
             <div class="row">
                 <div class="col-12 col-sm-6 col-lg-3"><dl><dd>Program Type</dd><dt>{{qs.program.name}}</dt></dl></div>
                 <div class="col-12 col-sm-6 col-lg-3"><dl><dd>Duration</dd><dt>{{qs.program.duration}} year</dt></dl></div>
-                <div class="col-12 col-sm-6 col-lg-3"><dl><dd>Annual tuition fee</dd><dt>Rs. {{qs.university.fee}}</dt></dl></div>
+                <div class="col-12 col-sm-6 col-lg-3"><dl><dd>Annual tuition fee</dd><dt>$ {{qs.university.fee}}</dt></dl></div>
                 <div class="col-12 col-sm-6 col-lg-3"><dl><dd>Intake</dd><dt>{{ qs.university.summer_intake_date|date:"F Y" }}</dt>
                                                                         <dt>{{qs.university.winter_intake_date|date:"F Y"}}</dt> </dl></div>
             </div>
@@ -100,14 +100,10 @@ paluwaa | search
   
   {% empty %}
     <h2>Sorry, your selected query doesn't match with the data in database.</h2>
-    <script type="text/javascript">
-    
-    </script>
   {% endfor %}
 </div>
 
-
-{% if page_obj.has_other_pages%}
+{% if page_obj.has_other_pages %}
 <div class="d-flex justify-content-center mt-4">
 	{% if page_obj.has_previous %}
 	<a class='btn btn-outline-danger rounded mb-4' href="?page=1">First</a>
@@ -117,17 +113,18 @@ paluwaa | search
 	{% for num in page_obj.paginator.page_range %}
 	{% if page_obj.number == num %}
 	<a class='btn btn-danger mb-4' href="?page={{ num }}">{{ num }}</a>
-	{% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %} <a class='btn btn-outline-danger mb-4'
+{% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %} <a class='btn btn-outline-danger mb-4'
 		href="?page={{ num }}">{{ num }}</a>
-		{% endif %}
-		{% endfor %}
+	{% endif %}
+	{% endfor %}
 
-		{% if page_obj.has_next %}
+	{% if page_obj.has_next %}
 		<a class='btn btn-outline-danger mb-4' href="?page={{ page_obj.next_page_number}}">Next</a>
 		<a class='btn btn-outline-danger mb-4' href="?page={{ page_obj.paginator.num_pages }}">Last</a>
-    {% endif %}
+  {% endif %}
 </div>    
 {% endif %}
+
 {% endblock content %}
 
 {% block "footer" %}
