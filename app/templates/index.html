@@ -213,12 +213,25 @@ estudygarage | home
 								<div class="item">
 									<div class="testimonial-2">
 										<div class="style1"><img
-											src="{{ u.uni_logo.url }}" alt="" width="auto" height="auto">
+											href="{{u.website_link}}" target="_blank" src="{{ u.uni_logo.url }}" alt="{{u.name}}" width="auto" height="auto">
 										</div>
 										<div class="testimonial-text">
 											<p>{{u.desc|truncatechars:100}}</p>
 										</div>
-										<div class="testimonial-detail"> <strong class="testimonial-name">{{u.name}}</strong></div>
+										<div class="testimonial-detail"> <strong class="testimonial-name"><a href="{{u.website_link}}" target="_blank">{{u.name}}</a></strong></div>
+									</div>
+								</div>
+								{% endfor %}
+								{% for c in special_consultancy %}
+								<div class="item">
+									<div class="testimonial-2">
+										<div class="style1"><img
+											href="{{c.website_link}}" target="_blank" src="{{ c.logo_photo.url }}" alt="{{c.name}}" width="auto" height="auto">
+										</div>
+										<div class="testimonial-text">
+											<p>{{c.desc|truncatechars:100}}</p>
+										</div>
+										<div class="testimonial-detail"> <strong class="testimonial-name"><a href="{{c.website_link}}" target="_blank">{{c.name}}</a></strong></div>
 									</div>
 								</div>
 								{% endfor %}

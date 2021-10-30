@@ -80,6 +80,7 @@ class University(models.Model):
     desc_1 = RichTextField("uni_long_paragraph_description")
     summer_intake_date = models.DateField(blank=True, null=True)
     winter_intake_date = models.DateField(blank=True, null=True)
+    website_link = models.URLField(blank=True, null=True)
 
     class Meta: 
         verbose_name_plural = "universities"
@@ -148,6 +149,8 @@ class Consultancy(models.Model):
     logo_photo = models.ImageField(upload_to='covers/consultancy/')
     desc = models.TextField(max_length=200)
     special = models.BooleanField(default=False)
+    website_link = models.URLField(blank=True, null=True)
+
 
     def __str__(self):
         return  self.name
