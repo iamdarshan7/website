@@ -28,3 +28,11 @@ class Announcement(models.Model):
 
     class Meta:
         ordering = ['-created',]
+
+class AboutDesc(models.Model):
+    special = models.BooleanField(default=True, unique=True)
+    heading = models.CharField(max_length=50)
+    description = models.TextField(max_length=150)
+
+    def __str__(self):
+        return self.heading

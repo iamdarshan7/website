@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
-from .models import AboutUs, Announcement
+from .models import AboutUs, Announcement, AboutDesc
 from app.models import ApplicationForm
 from datetime import date
 from app.models import University, Consultancy
@@ -20,6 +20,7 @@ class AboutUsTemplateView(TemplateView):
 def aboutUsTemplateView(request):
     aboutDatas = AboutUs.objects.all()
     actual_happy_student = ApplicationForm.objects.count()
+    aboutDesc = AboutDesc.objects.filter(special=True)
 
     #for year of experience
     tyd = 2021
@@ -36,6 +37,7 @@ def aboutUsTemplateView(request):
         "actual_happy_student": actual_happy_student,
         "days_of_experience": days_of_experience,
         "associate_partner": associate_partner,
+        "aboutDesc":aboutDesc,
     }
     return render(request, 'about_us.html', context)
 
