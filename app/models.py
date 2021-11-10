@@ -32,7 +32,7 @@ from ckeditor.fields import RichTextField
     #     return self.name
 
 class Countries(models.Model):
-    name = models.CharField("country_name", max_length=100)
+    name = models.CharField("country_name", max_length=100, unique=True)
     
     class Meta:
         verbose_name_plural = "countries"
@@ -41,7 +41,7 @@ class Countries(models.Model):
         return self.name
 
 class Cities(models.Model):
-    name = models.CharField("city_name", max_length=100)    
+    name = models.CharField("city_name", max_length=100, unique=True)    
 
     class Meta:
         verbose_name_plural = "cities"
@@ -51,13 +51,13 @@ class Cities(models.Model):
         return self.name  
 
 class Subject(models.Model):
-    name = models.CharField("subject_name", max_length=100)
+    name = models.CharField("subject_name", max_length=100, unique=True)
 
     def __str__(self):
         return self.name
 
 class ProgramsType(models.Model):
-    name = models.CharField("program_name", max_length=100)
+    name = models.CharField("program_name", max_length=100, unique=True)
     duration = models.IntegerField()
     requirement_1 = models.CharField(max_length=200)
     requirement_2 = models.CharField(max_length=200)
