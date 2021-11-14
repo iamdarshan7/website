@@ -10,6 +10,7 @@ estudygarage | home
 
 {% block content %}
 
+{% for homePageInfo in homePageInfos %}
 <div class="page-wraper">
 	<div id="loading-area"></div>
 	<!-- Content -->
@@ -31,7 +32,7 @@ estudygarage | home
 							data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9=""
 							data-param10="" data-description="">
 							<!-- MAIN IMAGE -->
-							<img src="{% static 'images/banner/hurry.jpg' %}" alt="" data-bgposition="center center"
+							<img src="{{homePageInfo.heading_first_image.url}}" alt="" data-bgposition="center center"
 								data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
 							<div class="tp-caption tp-shape tp-shapewrapper" id="slide-100-layer-5"
 								data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
@@ -51,7 +52,7 @@ estudygarage | home
 								data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
 								data-paddingleft="[0,0,0,0]"
 								style="z-index: 6; white-space: nowrap; font-size: 20px; line-height: 62px; font-weight: 700; color: #fff; letter-spacing: 0px;font-family:Montserrat;text-transform:uppercase;">
-								#1 doorway to education
+								#1 {{homePageInfo.moto}}
 							</div>
 							<!-- LAYER NR. 3 -->
 							<div class="tp-caption tp-resizeme d-lg-block d-none" id="slide-100-layer-2" data-x="550"
@@ -62,7 +63,7 @@ estudygarage | home
 								data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
 								data-paddingleft="[0,0,0,0]"
 								style="z-index: 7; white-space: nowrap; color:#fff; font-size: 60px; line-height: 80px; font-weight: 600; font-family:Montserrat;">
-								We Provide You <br />Realiable Educational Solutions
+								We Provide You <br />{{homePageInfo.heading_title}}
 							</div>
 							<!-- LAYER NR. 6 -->
 							<div class="tp-caption tp-resizeme d-lg-block d-none" id="slide-100-layer-3" data-x="780"
@@ -72,7 +73,7 @@ estudygarage | home
 								data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0]"
 								data-paddingright="[0]" data-paddingbottom="[0]" data-paddingleft="[0]"
 								style="z-index: 10; white-space: nowrap; font-size: 16px; line-height: 30px; font-weight: 600; font-family:Montserrat;border-radius:3px 3px 3px 3px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;text-decoration: none;">
-								<a href="{% url 'search' %}" class="site-button button-md white">Study Program</a>
+								<a href="{% url 'search' %}" class="site-button button-md white">{{homePageInfo.button_name1}}</a>
 							</div>
 							<div class="tp-caption tp-resizeme d-lg-block d-none" id="slide-100-layer-4" data-x="970"
 								data-y="448" data-width="['auto']" data-height="['auto']" data-type="button"
@@ -82,7 +83,7 @@ estudygarage | home
 								data-paddingright="[0]" data-paddingbottom="[0]" data-paddingleft="[0]"
 								style="z-index: 11; white-space: nowrap; font-size: 16px; line-height: 30px; font-weight: 600; font-family:Montserrat;border-radius:3px 3px 3px 3px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;text-decoration: none;">
 								<a href="{% url 'contact_page' %}"
-									class="site-button button-md outline outline-2 white">Talk To US</a>
+									class="site-button button-md outline outline-2 white">{{homePageInfo.button_name2}}</a>
 							</div>
 						</li>
 						<li data-index="rs-200" data-transition="fade" data-slotamount="default" data-hideafterloop="0"
@@ -92,7 +93,7 @@ estudygarage | home
 							data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9=""
 							data-param10="" data-description="">
 							<!-- MAIN IMAGE -->
-							<img src="{% static 'images/banner/hatfly.jpg' %}" alt="" data-bgposition="center center"
+							<img src="{{homePageInfo.heading_second_image.url}}" alt="" data-bgposition="center center"
 								data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
 
 							<div class="tp-caption tp-shape tp-shapewrapper" id="slide-200-layer-5"
@@ -113,7 +114,7 @@ estudygarage | home
 								data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
 								data-paddingleft="[0,0,0,0]"
 								style="z-index: 6; white-space: nowrap; font-size: 20px; line-height: 62px; font-weight: 700; color: #fff; letter-spacing: 0px;font-family:Montserrat;text-transform:uppercase;">
-								#1 best agency Theme
+								#1 {{homePageInfo.moto}}
 							</div>
 							<!-- LAYER NR. 3 -->
 							<div class="tp-caption tp-resizeme d-lg-block d-none" id="slide-200-layer-2" data-x="550"
@@ -124,7 +125,7 @@ estudygarage | home
 								data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
 								data-paddingleft="[0,0,0,0]"
 								style="z-index: 7; white-space: nowrap; color:#fff; font-size: 60px; line-height: 80px; font-weight: 600; font-family:Montserrat;">
-								We Provide You <br />Realiable Educational Solutions
+								We Provide You <br />{{homePageInfo.heading_title}}
 							</div>
 							<!-- LAYER NR. 6 -->
 							<div class="tp-caption tp-resizeme d-lg-block d-none" id="slide-200-layer-3" data-x="780"
@@ -134,7 +135,7 @@ estudygarage | home
 								data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0]"
 								data-paddingright="[0]" data-paddingbottom="[0]" data-paddingleft="[0]"
 								style="z-index: 10; white-space: nowrap; font-size: 16px; line-height: 30px; font-weight: 600; font-family:Montserrat;border-radius:3px 3px 3px 3px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;text-decoration: none;">
-								<a href="{% url 'search' %}" class="site-button button-md white">Study Program</a>
+								<a href="{% url 'search' %}" class="site-button button-md white">{{homePageInfo.button_name1}}</a>
 							</div>
 							<div class="tp-caption tp-resizeme d-lg-block d-none" id="slide-200-layer-4" data-x="970"
 								data-y="448" data-width="['auto']" data-height="['auto']" data-type="button"
@@ -144,7 +145,7 @@ estudygarage | home
 								data-paddingright="[0]" data-paddingbottom="[0]" data-paddingleft="[0]"
 								style="z-index: 11; white-space: nowrap; font-size: 16px; line-height: 30px; font-weight: 600; font-family:Montserrat;border-radius:3px 3px 3px 3px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;text-decoration: none;">
 								<a href="{% url 'contact_page' %}"
-									class="site-button button-md outline outline-2 white">Talk To US</a>
+									class="site-button button-md outline outline-2 white">{{homePageInfo.button_name2}}</a>
 							</div>
 						</li>
 					</ul>
@@ -164,13 +165,13 @@ estudygarage | home
 								<div class="icon-md  m-b20"> <a href="#" class="icon-cell"><i
 											class="flaticon-value"></i></a> </div>
 								<div class="icon-content">
-									<h5 class="tilte">APPLY ONLINE</h5>
+									<h5 class="tilte">{{homePageInfo.apply_online_title}}</h5>
 									<p class="m-b0 font-baloo" style="padding: 5%;">
-										Give it a gentle touch to get your dream college.
+										{{homePageInfo.apply_online_desc}}
 									</p>
 									<span style="padding: 5px;"><a href="{% url 'search' %}"
-											class="site-button button-md outline outline-2 red rounded font-patrick">Start
-											your search</a></span>
+											class="site-button button-md outline outline-2 red rounded font-patrick">
+											{{homePageInfo.apply_online_button_name}}</a></span>
 								</div>
 								<i class="flaticon-value"></i>
 							</div>
@@ -180,13 +181,12 @@ estudygarage | home
 								<div class="icon-md  m-b20"> <a href="#" class="icon-cell"><i
 											class="flaticon-workers"></i></a> </div>
 								<div class="icon-content">
-									<h5 class="tilte">CONTACT US</h5>
+									<h5 class="tilte">{{homePageInfo.contact_us_title}}</h5>
 									<p class="m-b0 font-baloo" style="padding: 5%;">
-										We are here to assist you in your journey.
+										{{homePageInfo.contact_us_desc}}
 									</p>
 									<span style="padding: 5px;"><a href="{% url 'contact_page' %}"
-											class="site-button button-md outline outline-2 red font-patrick">Connect
-											with us</a></span>
+											class="site-button button-md outline outline-2 red font-patrick">{{homePageInfo.contact_us_button_name}}</a></span>
 								</div>
 								<i class="flaticon-workers"></i>
 							</div>
@@ -202,8 +202,8 @@ estudygarage | home
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12 text-center section-head text-white">
-							<h2 class="fw7 text-white m-b0">Our Features</h2>
-							<h3 class="m-b0" style="color:white;"><a href="{% url 'contact_page' %}" style="color:red;">Contact</a> us to feature your institution with us.</h3>
+							<h2 class="fw7 text-white m-b0">{{homePageInfo.feature_title}}</h2>
+							<h3 class="m-b0" style="color:white;"><a href="{% url 'contact_page' %}" style="color:red;">Contact</a> {{homePageInfo.feature_heading_title}}</h3>
 						</div>
 					</div>
 					<div class="row">
@@ -244,12 +244,11 @@ estudygarage | home
 			<!-- Features section ends here -->
 
 			<div class="section-full content-inner bg-primary bg-img-fix"
-				style="background-image:url('static/images/banner/read.jpg');">
+				style="background-image:url({{homePageInfo.stats_image.url}});">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12 text-center section-head">
-							<h4 class="text-white max-w700 m-auto fw6">There is some reason behind why people choose
-								our educational site</h4>
+							<h4 class="text-white max-w700 m-auto fw6">{{homePageInfo.stats_title}}</h4>
 						</div>
 					</div>
 					<div class="row">
@@ -295,11 +294,11 @@ estudygarage | home
 
 
 			<div class="section-full content-inner-2 bg-gray"
-				style="background-image:url(static/images/banner/fetures.jpg); background-size:cover">
+				background-size:cover">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12 text-center section-head">
-							<h2 class="fw7 m-b0">Articles by Students</h2>
+							<h2 class="fw7 m-b0">{{homePageInfo.article_title}}</h2>
 						</div>
 					</div>
 					<div class="row">
@@ -338,6 +337,7 @@ estudygarage | home
 	<!-- Our Awesome Services End -->
 
 </div>
+{% endfor %}
 {% endblock content %}
 
 {% block "footer" %}

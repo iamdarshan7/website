@@ -83,10 +83,10 @@ estudygarage | search
         <div class="col-12 col-sm-6 col-lg-9 card-body">
             <div class="row">
                 <div class="col-12 col-sm-6 col-lg-3"><dl><dd>Program Type</dd><dt>{{qs.program.name}}</dt></dl></div>
-                <div class="col-12 col-sm-6 col-lg-3"><dl><dd>Duration</dd><dt>{{qs.program.duration}} year</dt></dl></div>
-                <div class="col-12 col-sm-6 col-lg-3"><dl><dd>Annual tuition fee</dd><dt>$ {{qs.university.fee}}</dt></dl></div>
-                <div class="col-12 col-sm-6 col-lg-3"><dl><dd>Intake</dd><dt>{{ qs.university.summer_intake_date|date:"F Y" }}</dt>
-                                                                        <dt>{{qs.university.winter_intake_date|date:"F Y"}}</dt> </dl></div>
+                <div class="col-12 col-sm-6 col-lg-3"><dl><dd>Duration</dd><dt>{{qs.duration}} year</dt></dl></div>
+                <div class="col-12 col-sm-6 col-lg-3"><dl><dd>Annual tuition fee</dd><dt>{{qs.fee}}</dt></dl></div>
+                <div class="col-12 col-sm-6 col-lg-3"><dl><dd>Intake</dd><dt>{{ qs.summer_intake_date|date:"F Y" }}</dt>
+                                                                        <dt>{{qs.winter_intake_date|date:"F Y"}}</dt> </dl></div>
             </div>
         </div>
         <div class="col-12 col-sm-5 col-lg-3">

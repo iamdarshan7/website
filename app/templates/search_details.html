@@ -56,13 +56,13 @@ estudygarage | details
                                                 </td>
                                             <td><img src="{% static 'images/duration.png' %}" class="iclas"></td>
                                             <td><h6>duration<br>
-                                                {{ details.program.duration }} years</h6>
+                                                {{ details.duration }} years</h6>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td><img src="{% static 'images/fees.png' %}" class="iclas"></td>
-                                            <td><h6>tuition fee<br>$
-                                                {{ details.university.fee }}</h6>
+                                            <td><h6>tuition fee<br>
+                                                {{ details.fee }}</h6>
                                                 </td>
                                             <td><img src="{% static 'images/language.png' %}" class="iclas"></td>
                                             <td><h6>language<br>
@@ -75,7 +75,7 @@ estudygarage | details
                             </div>
                             <div class="col-md-6 align-self-center font-baloo">
                                 
-                                <p class="m-b0">{{ details.university.desc_1|safe }}</p>
+                                <p class="m-b0">{{ details.desc_1|safe }}</p>
                             </div>
                         </div>
                         
@@ -105,11 +105,11 @@ estudygarage | details
                                     <div class="row m-b50">
                                         <div class="col-lg-6 col-md-6" >
                                             <ul class="list-check primary">
-                                                <li>{{details.program.requirement_1}}</li>
-                                                <li>{{details.program.requirement_3}}</li>
-                                                <li>{{details.program.requirement_5}}</li>
-                                                <li>{{details.program.requirement_2}}</li>
-                                                <li>{{details.program.requirement_4}}</li>
+                                                <li>{{details.requirement_1}}</li>
+                                                <li>{{details.requirement_3}}</li>
+                                                <li>{{details.requirement_5}}</li>
+                                                <li>{{details.requirement_2}}</li>
+                                                <li>{{details.requirement_4}}</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -125,12 +125,12 @@ estudygarage | details
                                     <div class="row m-b50">
                                         <div class="col-lg-6 col-md-6" >
                                             <ul class="list-check primary">
-                                                <li>Intake Starting Date: {{details.university.summer_intake_date|date:"F Y"}}</li>
+                                                <li>Intake Starting Date: {{details.summer_intake_date|date:"F Y"}}</li>
                                             </ul>
                                         </div>
                                         <div class="col-lg-6 col-md-6" >
                                             <ul class="list-check primary">
-                                                <li>Intake Final Date: {{details.university.winter_intake_date|date:"F Y"}}</li>
+                                                <li>Intake Final Date: {{details.winter_intake_date|date:"F Y"}}</li>
                                             </ul>
                                         </div>
                                     </div>

@@ -1,6 +1,6 @@
 from django.db.models.signals import pre_save
 from django.dispatch import receiver
-from .models import University, FeedBackByStudent
+from .models import University, FeedBackByStudent, Consultancy, HomePageInfo
 
 
 @receiver(pre_save, sender=University)
@@ -20,9 +20,20 @@ def delete_old_image(sender, instance, *args, **kwargs):
             existing_image.image.delete(False)
 
 
-# @receiver(pre_save, sender=Consultancy)
-# def delete_old_image(sender, instance, *args, **kwargs):
-#     if instance.pk:
-#         existing_image = Consultancy.objects.get(pk=instance.pk)
-#         if instance.logo_photo and existing_image.logo_photo != instance.logo_photo:
-#             existing_image.logo_photo.delete(False)
+@receiver(pre_save, sender=Consultancy)
+def delete_old_image(sender, instance, *args, **kwargs):
+    if instance.pk:
+        existing_image = Consultancy.objects.get(pk=instance.pk)
+        if instance.logo_photo and existing_image.logo_photo != instance.logo_photo:
+            existing_image.logo_photo.delete(False)
+
+@receiver(pre_save, sender=HomePageInfo)
+def delete_old_image(sender, instance, *args, **kwargs):
+    if instance.pk:
+        existing_image = HomePageInfo.objects.get(pk=instance.pk)
+        if instance.heading_first_image and existing_image.heading_first_image != instance.heading_first_image:
+            existing_image.heading_first_image.delete(False)
+        if instance.heading_second_image and existing_image.heading_second_image != instance.heading_second_image:
+            existing_image.heading_second_image.delete(False)
+        if instance.stats_image and existing_image.stats_image != instance.stats_image:
+            existing_image.stats_image.delete(False)
